@@ -1,0 +1,16 @@
+---
+- name: configuring tomcat10 0n all the servers
+  hosts: all
+  tasks:
+    - name: install tomcat10
+      apt:
+        name: tomcat10
+        state: present
+        update_cache: yes
+    - name: install tomcat10-admin
+      state: present
+    - name: copy tomcat-users.xml to all servers
+      copy:
+        src: 
+...
+

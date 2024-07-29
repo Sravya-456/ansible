@@ -1,0 +1,17 @@
+---
+- name: create dirs and files on all the servers
+  hosts: all
+  tasks:
+    - name: create dir1 in the /tmp folder
+      file: 
+        name: /tmp/dir1
+        state: directory
+    - name: create a file in dir1
+      file: 
+        name: /tmp/dir1/file1
+        state: touch
+        mode: 758 
+        owner: root
+        group: sravya
+...
+
