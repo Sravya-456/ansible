@@ -1,0 +1,19 @@
+---
+- name: Implementing tags
+  hosts: all
+  tasks:
+    - name: Install tree
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+      tags: tress_installation
+    - name: user creation
+      user:
+        name: sravya
+        password: sravs
+    - name: copy password file
+      copy: 
+        src: /etc/passwd
+        dest: /tmp     
+...
